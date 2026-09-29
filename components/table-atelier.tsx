@@ -107,7 +107,17 @@ function TablePreview({ confirmation = false }: { confirmation?: boolean }) {
       <div className="table-shade" />
       <div className="table-setting" aria-hidden="true">
         {plate && <motion.div key={plate.id} className="setting-plate" initial={{ opacity: 0, scale: 0.82 }} animate={{ opacity: 1, scale: 1 }} transition={{ type: "spring", stiffness: 180, damping: 20 }}><Image src={publicAsset(plate.previewImage ?? plate.image!)} alt="" fill sizes="300px" quality={90} /></motion.div>}
-        {cutlery && <motion.div key={cutlery.id} className={`setting-cutlery finish-${cutlery.id} ${cutlery.previewImage ? "has-photo" : ""}`} initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }}>{cutlery.previewImage ? <Image src={publicAsset(cutlery.previewImage)} alt="" fill sizes="140px" quality={90} /> : <><i /><i /><i /></>}</motion.div>}
+        {cutlery && (
+          <motion.div key={cutlery.id} className={`setting-cutlery finish-${cutlery.id}`} initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }}>
+            <div className="cutlery-side cutlery-left" aria-hidden="true">
+              <span className="utensil-image fork-image"><Image src={publicAsset(cutlery.forkImage!)} alt="" fill sizes="40px" quality={90} /></span>
+            </div>
+            <div className="cutlery-side cutlery-right" aria-hidden="true">
+              <span className="utensil-image knife-image"><Image src={publicAsset(cutlery.knifeImage!)} alt="" fill sizes="40px" quality={90} /></span>
+              <span className="utensil-image spoon-image"><Image src={publicAsset(cutlery.spoonImage!)} alt="" fill sizes="48px" quality={90} /></span>
+            </div>
+          </motion.div>
+        )}
         {glass && <motion.div key={glass.id} className="setting-glass" initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} transition={{ type: "spring", stiffness: 160, damping: 20 }}><Image src={publicAsset(glass.previewImage ?? glass.image!)} alt="" fill sizes="180px" quality={90} /></motion.div>}
       </div>
       <div className="preview-label">
@@ -195,16 +205,16 @@ export function TableAtelier() {
                 <button type="button" className="welcome-media" onClick={() => setVideoOpen(true)} aria-label="Play the Morpheus introduction film">
                   <Image src={publicAsset("/restaurant-background.webp")} alt="The dining room at Morpheus Macau" fill sizes="(max-width: 760px) 100vw, 55vw" quality={92} />
                   <span className="play-disc"><CirclePlay size={39} strokeWidth={1.2} /></span>
-                  <span className="media-caption">THE LALIQUE TABLE · MORPHEUS MACAU</span>
+                  <span className="media-caption">Le Salon de Cristal Experience</span>
                 </button>
                 <div className="welcome-note"><span>AN ART OF ITS OWN</span><p>French savoir-faire, crystal artistry and the quiet pleasure of a table prepared just for you.</p></div>
               </div>
               <div className="welcome-copy">
                 <p className="eyebrow">WELCOME{guestName ? `, ${guestName.toUpperCase()}` : " TO YOUR EVENING"}</p>
-                <h1>The art of<br />a table,<br /><em>made yours.</em></h1>
+                <h1>Le Salon de Cristal<br /><em>Experience</em></h1>
                 <p>Discover exceptional crystal details and thoughtful craftsmanship, then make a few final choices for your private dining experience.</p>
                 <div className="welcome-rule"><span>01</span><i /><span>THE EVENING&apos;S CENTREPIECE</span></div>
-                <Button className="continue-button" onClick={() => setStage("selection")}>Set your table <ArrowRight size={17} /></Button>
+                <Button className="continue-button" onClick={() => setStage("selection")}>Tailor Your Experience <ArrowRight size={17} /></Button>
               </div>
             </section>
             <footer className="screen-footer"><span>ALAIN DUCASSE AT MORPHEUS</span><span>AN EXPERIENCE IN DETAIL</span></footer>
@@ -215,7 +225,7 @@ export function TableAtelier() {
           <motion.main key="selection" className="atelier-screen" {...pageMotion}>
             <header className="screen-header atelier-header">
               <Brand />
-              <div className="header-center"><span>YOUR PRIVATE DINING EXPERIENCE</span><strong>The Lalique Table</strong></div>
+              <div className="header-center"><span>YOUR PRIVATE DINING EXPERIENCE</span><strong>Le Salon de Cristal Experience</strong></div>
               <Button variant="ghost" size="sm" onClick={logout} aria-label="Log out">Log out <LogOut size={14} /></Button>
             </header>
             <main className="atelier-main">
@@ -248,7 +258,7 @@ export function TableAtelier() {
                 </aside>
               </div>
             </main>
-            <footer className="screen-footer"><span>THE LALIQUE TABLE</span><span>01 — 04 · PERSONALISING YOUR PLACE SETTING</span></footer>
+            <footer className="screen-footer"><span>Le Salon de Cristal Experience</span><span>01 — 04 · PERSONALISING YOUR PLACE SETTING</span></footer>
           </motion.main>
         )}
 
