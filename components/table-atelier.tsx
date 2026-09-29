@@ -187,7 +187,7 @@ export function TableAtelier() {
                     <label htmlFor="accessCode">WELCOME CODE</label>
                     <Input id="accessCode" autoComplete="one-time-code" placeholder="Enter your invitation code" aria-invalid={Boolean(form.formState.errors.accessCode)} {...form.register("accessCode")} />
                     {form.formState.errors.accessCode && <span className="field-error">{form.formState.errors.accessCode.message}</span>}
-                    <Button className="submit-button" type="submit">Enter the experience <ArrowRight size={17} /></Button>
+                    <Button className="submit-button" type="submit">Tailor Your Experience <ArrowRight size={17} /></Button>
                     <p className="demo-note">DEMO ACCESS <span>ATELIER26</span> OR <span>123456</span></p>
                   </form>
                 </CardContent>
