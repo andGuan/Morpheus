@@ -24,7 +24,7 @@ function Brand({ light = false }: { light?: boolean }) {
   return (
     <span className={`brand ${light ? "brand-light" : ""}`}>
       <Sparkles aria-hidden="true" size={15} strokeWidth={1.5} />
-      MORPHEUS <span>MACAU</span>
+      ATLANTIS <span>MACAU</span>
     </span>
   );
 }
@@ -103,7 +103,7 @@ function TablePreview({ confirmation = false }: { confirmation?: boolean }) {
 
   return (
     <div className={`table-preview ${confirmation ? "confirmation-table" : ""}`}>
-      <Image className="table-photo" src={publicAsset("/lalique-table.png")} alt="The Lalique crystal table at Morpheus" fill priority sizes="(max-width: 900px) 100vw, 52vw" quality={92} />
+      <Image className="table-photo" src={publicAsset("/lalique-table.png")} alt="The Lalique crystal table at Atlantis" fill priority sizes="(max-width: 900px) 100vw, 52vw" quality={92} />
       <div className="table-shade" />
       <div className="table-setting" aria-hidden="true">
         {plate && <motion.div key={plate.id} className="setting-plate" initial={{ opacity: 0, scale: 0.82 }} animate={{ opacity: 1, scale: 1 }} transition={{ type: "spring", stiffness: 180, damping: 20 }}><Image src={publicAsset(plate.previewImage ?? plate.image!)} alt="" fill sizes="300px" quality={90} /></motion.div>}
@@ -166,14 +166,14 @@ export function TableAtelier() {
       <AnimatePresence mode="wait" initial={false}>
         {stage === "login" && (
           <motion.main key="login" className="login-screen" {...pageMotion}>
-            <Image className="login-photo" src={publicAsset("/restaurant-background.webp")} alt="The dining room at Morpheus Macau" fill priority sizes="100vw" quality={92} />
+            <Image className="login-photo" src={publicAsset("/restaurant-background.webp")} alt="The dining room at Atlantis Macau" fill priority sizes="100vw" quality={92} />
             <div className="login-wash" />
             <div className="login-frame" />
             <div className="login-top"><Brand light /><span>PRIVATE DINING · 2026</span></div>
             <div className="login-layout">
               <div className="login-story">
                 <p className="eyebrow">A PRIVATE EVENING AWAITS</p>
-                <h1>Alain Ducasse<br /><em>at Morpheus</em></h1>
+                <h1>Alain Ducasse<br /><em>at Atlantis</em></h1>
                 <p className="login-intro">A table shaped around you.<br />A night worth remembering.</p>
               </div>
               <Card className="login-card">
@@ -193,7 +193,7 @@ export function TableAtelier() {
                 </CardContent>
               </Card>
             </div>
-            <footer className="login-footer"><span>MORPHEUS</span><span>MACAU · COTAI</span><span>01 — 04</span></footer>
+            <footer className="login-footer"><span>ATLANTIS</span><span>MACAU · COTAI</span><span>01 — 04</span></footer>
           </motion.main>
         )}
 
@@ -202,8 +202,8 @@ export function TableAtelier() {
             <header className="screen-header"><Brand /><Button variant="ghost" size="sm" onClick={logout}>Log out <LogOut size={14} /></Button></header>
             <section className="welcome-content">
               <div className="welcome-media-wrap">
-                <button type="button" className="welcome-media" onClick={() => setVideoOpen(true)} aria-label="Play the Morpheus introduction film">
-                  <Image src={publicAsset("/restaurant-background.webp")} alt="The dining room at Morpheus Macau" fill sizes="(max-width: 760px) 100vw, 55vw" quality={92} />
+                <button type="button" className="welcome-media" onClick={() => setVideoOpen(true)} aria-label="Play the Atlantis introduction film">
+                  <Image src={publicAsset("/restaurant-background.webp")} alt="The dining room at Atlantis Macau" fill sizes="(max-width: 760px) 100vw, 55vw" quality={92} />
                   <span className="play-disc"><CirclePlay size={39} strokeWidth={1.2} /></span>
                   <span className="media-caption">Le Salon de Cristal Experience</span>
                 </button>
@@ -217,7 +217,7 @@ export function TableAtelier() {
                 <Button className="continue-button" onClick={() => setStage("selection")}>Tailor Your Experience <ArrowRight size={17} /></Button>
               </div>
             </section>
-            <footer className="screen-footer"><span>ALAIN DUCASSE AT MORPHEUS</span><span>AN EXPERIENCE IN DETAIL</span></footer>
+            <footer className="screen-footer"><span>ALAIN DUCASSE AT ATLANTIS</span><span>AN EXPERIENCE IN DETAIL</span></footer>
           </motion.main>
         )}
 
@@ -282,7 +282,7 @@ export function TableAtelier() {
               <p className="confirmation-thanks">{confirmed ? `Thank you, ${guestName}. We look forward to welcoming you.` : "Your host will have your table prepared for the evening."}</p>
               <Button variant="ghost" className="edit-button" onClick={() => setStage("selection")}><ArrowLeft size={15} /> Edit your selection</Button>
             </section>
-            <footer className="screen-footer"><span>ALAIN DUCASSE AT MORPHEUS</span><span>04 — 04 · YOUR EVENING AWAITS</span></footer>
+            <footer className="screen-footer"><span>ALAIN DUCASSE AT ATLANTIS</span><span>04 — 04 · YOUR EVENING AWAITS</span></footer>
           </motion.main>
         )}
       </AnimatePresence>
@@ -290,9 +290,9 @@ export function TableAtelier() {
       <AnimatePresence>
         {videoOpen && (
           <motion.div className="video-backdrop" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onMouseDown={(event) => { if (event.target === event.currentTarget) setVideoOpen(false); }}>
-            <motion.div className="video-dialog" role="dialog" aria-modal="true" aria-label="Morpheus introduction film" initial={{ opacity: 0, scale: 0.97, y: 12 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.98 }}>
+            <motion.div className="video-dialog" role="dialog" aria-modal="true" aria-label="Atlantis introduction film" initial={{ opacity: 0, scale: 0.97, y: 12 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.98 }}>
               <Button variant="ghost" size="icon" className="video-close" aria-label="Close video" onClick={() => setVideoOpen(false)}><X size={18} /></Button>
-              <video src={publicAsset("/Morpheus.m4v")} poster={publicAsset("/restaurant-background.webp")} controls autoPlay playsInline preload="metadata">Your browser does not support the video element.</video>
+              <video src={publicAsset("/Atlantis.m4v")} poster={publicAsset("/restaurant-background.webp")} controls autoPlay playsInline preload="metadata">Your browser does not support the video element.</video>
             </motion.div>
           </motion.div>
         )}
