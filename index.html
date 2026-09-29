@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#17231f" />
+  <title>Table Atelier | Private Dining Experience</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20260929-lalique" />
+</head>
+<body>
+  <div class="app-shell">
+    <section class="login-view" id="loginView">
+      <div class="login-image" role="img" aria-label="Elegant restaurant dining room"></div>
+      <div class="login-panel">
+        <div class="login-copy">
+          <p class="eyebrow">WELCOME TO</p>
+          <h1>Alain Ducasse<br /><em>at Morpheus</em></h1>
+          <p class="intro">A private dining experience<br />crafted especially for you.</p>
+        </div>
+        <form class="login-form" id="loginForm">
+          <label for="guestName">GUEST NAME</label>
+          <input id="guestName" name="guestName" type="text" placeholder="Enter your name" autocomplete="name" required />
+          <label for="accessCode">WELCOME CODE</label>
+          <input id="accessCode" name="accessCode" type="text" placeholder="e.g. ATELIER26" required />
+          <button class="primary-button" type="submit">Enter Experience <span>→</span></button>
+          <p class="form-note">Demo access: ATELIER26 or 123456</p>
+        </form>
+        <div class="login-footer"><span>MORPHEUS</span><span>MACAU · 2026</span></div>
+      </div>
+    </section>
+
+    <section class="atelier-view welcome-view is-hidden" id="atelierView">
+      <header class="welcome-header"><span class="welcome-brand">MORPHEUS</span><button class="welcome-logout" id="logoutButton" type="button">Log out</button></header>
+
+      <main class="atelier-content">
+        <div class="welcome-grid">
+          <div class="welcome-media-column">
+            <button class="video-card" id="videoTrigger" type="button" aria-label="Play introduction video"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80" alt="Alain Ducasse at the Lalique table" /><span class="play-button" aria-hidden="true">▶</span></button>
+            <article class="intro-card"><p class="card-kicker">WELCOME TO THE CRAFTED EXPERIENCE</p><h2>The Exceptional Lalique Table</h2><p>Exceptional crystal details, refined craftsmanship, and an atmosphere designed for memorable evenings.</p></article>
+          </div>
+          <div class="welcome-copy-column">
+            <p class="welcome-kicker">A PRIVATE EVENING AWAITS</p>
+            <h1>Welcome to<br />Alain Ducasse<br /><em>at Morpheus</em></h1>
+            <p class="welcome-description">Welcome to a carefully crafted setting, refined crystal details, and an intimate evening reserved for your private experience.</p>
+            <p class="welcome-description">The spectacular Lalique table brings crystal artistry and French gastronomy together for your private evening.</p>
+            <article class="intro-card intro-card-side"><p class="card-kicker">THE EVENING'S CENTREPIECE</p><h2>The Special Lalique Table</h2><p>Meticulously crafted serving and crystal details create an intimate atmosphere for your private evening.</p></article>
+            <button class="continue-button" id="continueButton" type="button">Continue to the tailored experience <span>→</span></button>
+          </div>
+        </div>
+      </main>
+    </section>
+
+    <section class="atelier-view selection-view is-hidden" id="selectionView">
+      <header class="topbar">
+        <span class="brand-mark">MORPHEUS</span>
+        <h1 class="selection-title">The Lalique Table</h1>
+        <div class="topbar-meta"><span>THE LALIQUE TABLE</span><button class="icon-button" id="selectionLogoutButton" type="button" aria-label="Log out">×</button></div>
+      </header>
+      <main class="atelier-content">
+        <div class="page-heading">
+          <div><p class="eyebrow">A PLACE SETTING, YOURS</p><h2>The Lalique Table</h2></div>
+          <p class="heading-note">Choose the details that will make<br />your evening unmistakably yours.</p>
+        </div>
+        <div class="workspace table-configurator">
+          <aside class="catalog-panel left-catalog" aria-label="Plate selection">
+            <div class="catalog-heading"><p class="eyebrow">01 / THE FOUNDATION</p><p>Choose your charger and plate.</p></div>
+            <section class="catalog-group">
+              <h3 class="section-label">Plates <span>05</span></h3>
+              <div class="option-list" id="plateOptions"></div>
+            </section>
+          </aside>
+
+          <section class="preview-panel" aria-label="Live table setting preview">
+            <div class="preview-head"><span>YOUR TABLE, IN REAL TIME</span><span class="live-dot">LIVE PREVIEW</span></div>
+            <div class="table-preview etiquette-table" id="tablePreview">
+              <img src="lalique-table.png?v=20260929-3" alt="The Lalique crystal table in the dining room" />
+              <div class="preview-overlay"></div>
+              <div class="table-surface" id="tableSurface" aria-hidden="true"></div>
+              <div class="preview-caption"><span id="previewPlateName">Select a plate to begin</span><small id="previewGuestName"></small></div>
+            </div>
+            <div class="selection-summary">
+              <div><span class="summary-label">PLATE</span><strong id="summaryPlate">Not selected</strong></div>
+              <div><span class="summary-label">SILVERWARE</span><strong id="summaryCutlery">Not selected</strong></div>
+              <button class="swap-button" id="swapPlateButton" type="button" title="Cycle to the next plate">Swap plate <span>↻</span></button>
+            </div>
+            <section class="catalog-group silverware-group">
+              <h3 class="section-label">Silverware <span>05</span></h3>
+              <div class="option-list" id="cutleryOptions"></div>
+            </section>
+            <button class="confirm-button" id="reviewButton" type="button" disabled>Choose all three details <span>→</span></button>
+          </section>
+
+          <aside class="catalog-panel right-catalog" aria-label="Glassware selection">
+            <div class="catalog-heading"><p class="eyebrow">03 / THE FINISH</p><p>Find the right crystal silhouette.</p></div>
+            <section class="catalog-group">
+              <h3 class="section-label">Glassware <span>05</span></h3>
+              <div class="option-list" id="glassOptions"></div>
+            </section>
+            <div class="glass-summary"><span class="summary-label">GLASS</span><strong id="summaryGlass">Not selected</strong></div>
+          </aside>
+        </div>
+      </main>
+    </section>
+
+    <section class="atelier-view confirmation-view is-hidden" id="confirmationView">
+      <header class="topbar">
+        <span class="brand-mark">MORPHEUS</span>
+        <div class="topbar-meta"><span>YOUR PRIVATE EVENING</span><button class="icon-button" id="confirmLogoutButton" type="button" aria-label="Log out">×</button></div>
+      </header>
+      <main class="confirmation-content">
+        <p class="eyebrow">PREPARED WITH CARE</p>
+        <h1>Your Table Setting<br /><em>is Ready</em></h1>
+        <p class="confirmation-intro">A considered setting for <span id="confirmationGuestName">you</span>.</p>
+        <div class="table-preview etiquette-table confirmation-preview" id="confirmationPreview">
+          <img src="lalique-table.png?v=20260929-3" alt="Your Lalique crystal table setting" />
+          <div class="preview-overlay"></div>
+          <div class="table-surface" id="confirmationSurface" aria-hidden="true"></div>
+          <div class="preview-caption"><span id="confirmationPlateName"></span><small id="confirmationDetails"></small></div>
+        </div>
+        <button class="confirm-button final-confirm-button" id="confirmSettingButton" type="button">Confirm Table Setting <span>→</span></button>
+        <p class="confirmation-thanks" id="confirmationThanks">Thank you for choosing us. We look forward to welcoming you.</p>
+        <button class="edit-selection-button" id="editSelectionButton" type="button">← Edit your selection</button>
+      </main>
+    </section>
+
+    <dialog class="video-dialog" id="videoDialog"><button class="dialog-close" id="closeVideoButton" type="button" aria-label="Close video">×</button><video id="introVideo" poster="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80" controls playsinline preload="metadata"><source src="Morpheus.mp4" type="video/mp4" />Your browser does not support the video element.</video><p class="video-fallback is-hidden" id="videoFallback">The introduction film will be available soon.</p></dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

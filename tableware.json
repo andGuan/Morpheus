@@ -1,0 +1,116 @@
+[
+    {
+        "id": "dish_001",
+        "name": "Dream of Versailles Relief Gilded Bone China Plate",
+        "brand": "Bernardaud",
+        "category": "Bone China Plates",
+        "previewImg": "/tableware/cutout/dish_001.webp",
+        "description": "3D shell relief with central gilded floral ornament, pale off-white glaze, French palace dinner plate",
+        "renderParams": {
+            "material": "bone_china",
+            "baseColor": "#f6f2ec",
+            "decorColor": "#d4af37",
+            "pattern": "relief_gold_flower",
+            "thickness": 0.006
+        }
+    },
+    {
+        "id": "cup_001",
+        "name": "Lulli Etched Short-Stem Crystal Tumbler",
+        "brand": "Baccarat",
+        "category": "Short-Stem Crystal Cups",
+        "previewImg": "/tableware/cutout/cup_001.webp",
+        "description": "Classic 1932 vintage design, continuous vine etching all over body, heavy base, no gilding",
+        "renderParams": {
+            "material": "lead_free_crystal",
+            "transparency": 0.92,
+            "pattern": "etch_vine",
+            "tintColor": "#ffffff"
+        }
+    },
+    {
+        "id": "cup_002",
+        "name": "Stella Gold Rim Cut Stemmed Goblet",
+        "brand": "Saint-Louis",
+        "category": "Stemmed Crystal Goblets",
+        "previewImg": "/tableware/cutout/cup_002.webp",
+        "description": "Hand-cut facets on bowl, vintage scroll gilded rim, diamond multi-cut stem",
+        "renderParams": {
+            "material": "lead_free_crystal",
+            "transparency": 0.90,
+            "decorColor": "#d4af37",
+            "pattern": "cut_facet_gold_rim",
+            "tintColor": "#ffffff"
+        }
+    },
+    {
+        "id": "dish_002",
+        "name": "Candlewick Beaded Edge Clear Glass Plate",
+        "brand": "Imperial Glass",
+        "category": "Glass Plates",
+        "previewImg": "/tableware/cutout/dish_002.webp",
+        "description": "Continuous raised bead rim, transparent minimalist style, popular pearl glass salad plate",
+        "renderParams": {
+            "material": "soda_lime_glass",
+            "transparency": 0.95,
+            "pattern": "bead_edge",
+            "tintColor": "#ffffff"
+        }
+    },
+    {
+        "id": "set_001",
+        "name": "King's Garden Bird & Crest Bone China Set",
+        "brand": "Haviland",
+        "category": "Bone China Sets",
+        "previewImg": "/tableware/cutout/set_001.webp",
+        "description": "Includes dinner plate, soup bowl, side plate, covered butter dish; bird-floral & monogram pattern, scalloped rim",
+        "renderParams": {
+            "material": "bone_china",
+            "baseColor": "#f8f6f2",
+            "decorColor": "#8c5c3c",
+            "pattern": "bird_floral_monogram"
+        }
+    },
+    {
+        "id": "cup_003",
+        "name": "Laurel Bow Gilded Stemmed Goblet",
+        "brand": "Bohemia",
+        "category": "Stemmed Crystal Goblets",
+        "previewImg": "/tableware/cutout/cup_003.webp",
+        "description": "Vertical cut flutes on bowl, hand-painted gilded laurel wreath & bow, vintage banquet wine glass",
+        "renderParams": {
+            "material": "lead_free_crystal",
+            "transparency": 0.91,
+            "decorColor": "#d4af37",
+            "pattern": "laurel_bow_gold"
+        }
+    },
+    {
+        "id": "cup_004",
+        "name": "Vintage Tinted Crystal Goblet Collection",
+        "brand": "Saint-Louis / Baccarat",
+        "category": "Stemmed Crystal Goblets",
+        "previewImg": "/tableware/cutout/cup_004.webp",
+        "description": "Long-stem goblets in tinted green, dusty rose, wine red and clear; antique banquet multi-glass set",
+        "renderParams": {
+            "material": "lead_free_crystal",
+            "transparency": 0.88,
+            "pattern": "antique_goblet",
+            "tintColorList": ["#b4c248","#d888a8","#991a33","#ffffff"]
+        }
+    },
+    {
+        "id": "cup_005",
+        "name": "Lulli Etched Straight-Sided Tumbler",
+        "brand": "Baccarat",
+        "category": "Short-Stem Crystal Cups",
+        "previewImg": "/tableware/cutout/cup_005.webp",
+        "description": "Matching series with continuous vine etching, straight body without stem, water tumbler",
+        "renderParams": {
+            "material": "lead_free_crystal",
+            "transparency": 0.92,
+            "pattern": "etch_vine_straight",
+            "tintColor": "#ffffff"
+        }
+    }
+]

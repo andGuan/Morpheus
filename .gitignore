@@ -1,0 +1,8 @@
+.next/
+node_modules/
+out/
+next-env.d.ts
+*.tsbuildinfo
+.DS_Store
+/Morpheus.mp4
+/public/Morpheus.mp4
